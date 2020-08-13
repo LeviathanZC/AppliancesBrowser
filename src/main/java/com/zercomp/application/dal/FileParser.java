@@ -1,5 +1,7 @@
 package com.zercomp.application.dal;
 
+import com.zercomp.application.exception.InvalidDataException;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +12,15 @@ public class FileParser {
 
     private FileReader fReader;
 
-    public FileParser(String path) {
+    public FileParser() {
+        this(DEFAULT_PATH);
+    }
+
+    public FileParser(String path) throws InvalidDataException {
         try {
-            fReader = new FileReader(path)
+            fReader = new FileReader(path);
         } catch (FileNotFoundException e) {
-            fReader = new FileReader(DEFAULT_PATH);
+            throw new InvalidDataException("Cannot read a file located on the path:" + path);
         }
     }
 
