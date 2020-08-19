@@ -8,23 +8,19 @@ import java.util.List;
 
 public class FileParser {
 
-    private final String DEFAULT_PATH = "resources/appliances_db.txt";
+    private static final String DEFAULT_PATH = "resources/appliances_db.txt";
 
     private FileReader fReader;
 
-    public FileParser() {
+    public FileParser() throws InvalidDataException {
         this(DEFAULT_PATH);
     }
 
     public FileParser(String path) throws InvalidDataException {
-        try {
-            fReader = new FileReader(path);
-        } catch (FileNotFoundException e) {
-            throw new InvalidDataException("Cannot read a file located on the path:" + path);
-        }
+
     }
 
     public List<String> readFile() {
-        List<String> strings = new ArrayList<>();
+        return null;
     }
 }
