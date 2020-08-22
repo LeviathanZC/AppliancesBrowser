@@ -16,6 +16,7 @@ public abstract class AbstractAppliance {
         this.name = name;
     }
 
+    @Override
     public boolean equals(Object o) {
         if (o == this) {
             return true;
@@ -27,7 +28,14 @@ public abstract class AbstractAppliance {
 
         AbstractAppliance other = (AbstractAppliance) o;
 
-        return name != null ? this.name.equals(other.getName()) : false;
+        return name != null ? this.name.equals(other.getName()) : other.getName() == null;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("AbstractAppliance{ ");
+        sb.append("name: ").append(name).append("\n}");
+        return sb.toString();
     }
 
 }
