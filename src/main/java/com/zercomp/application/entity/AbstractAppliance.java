@@ -2,7 +2,7 @@ package com.zercomp.application.entity;
 
 public abstract class AbstractAppliance {
 
-    protected String name;
+    private String name;
 
     public AbstractAppliance(String name) {
         this.name = name;
@@ -29,6 +29,11 @@ public abstract class AbstractAppliance {
         AbstractAppliance other = (AbstractAppliance) o;
 
         return name != null ? this.name.equals(other.getName()) : other.getName() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ?this.name.hashCode() : 0;
     }
 
     @Override

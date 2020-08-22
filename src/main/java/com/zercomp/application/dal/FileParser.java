@@ -3,7 +3,6 @@ package com.zercomp.application.dal;
 import com.zercomp.application.exception.InvalidDataException;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FileParser {
