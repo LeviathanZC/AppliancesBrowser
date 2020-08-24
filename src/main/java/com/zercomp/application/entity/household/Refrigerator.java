@@ -1,4 +1,7 @@
-package com.zercomp.application.entity;
+package com.zercomp.application.entity.household;
+
+import com.zercomp.application.entity.HouseholdAppliance;
+import com.zercomp.application.entity.Size;
 
 public class Refrigerator extends HouseholdAppliance {
 
@@ -12,7 +15,7 @@ public class Refrigerator extends HouseholdAppliance {
         this(powerConsumption, weight, freezerCapacity, overallCapacity, new Size(width, height));
     }
 
-    public Refrigerator(int powerConsumption,int weight, int freezerCapacity, double overallCapacity, Size size) {
+    public Refrigerator(int powerConsumption, int weight, int freezerCapacity, double overallCapacity, Size size) {
         super(Refrigerator.class.getSimpleName(), powerConsumption);
         this.freezerCapacity = freezerCapacity;
         this.weight = weight;

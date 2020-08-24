@@ -1,4 +1,7 @@
-package com.zercomp.application.entity;
+package com.zercomp.application.entity.household;
+
+import com.zercomp.application.entity.HouseholdAppliance;
+import com.zercomp.application.entity.Size;
 
 public class Oven extends HouseholdAppliance {
 
