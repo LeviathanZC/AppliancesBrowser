@@ -3,16 +3,19 @@ package com.zercomp.application.entity;
 public class Refrigerator extends HouseholdAppliance {
 
     private int freezerCapacity;
+    private int weight;
     private double overallCapacity;
     private Size size;
 
-    public Refrigerator(int powerConsumption, int freezerCapacity, double overallCapacity, double width, double height) {
-        this(powerConsumption, freezerCapacity, overallCapacity, new Size(width, height));
+    public Refrigerator(int powerConsumption, int weight, int freezerCapacity, double overallCapacity,
+                        double width, double height) {
+        this(powerConsumption, weight, freezerCapacity, overallCapacity, new Size(width, height));
     }
 
-    public Refrigerator(int powerConsumption, int freezerCapacity, double overallCapacity, Size size) {
+    public Refrigerator(int powerConsumption,int weight, int freezerCapacity, double overallCapacity, Size size) {
         super(Refrigerator.class.getSimpleName(), powerConsumption);
         this.freezerCapacity = freezerCapacity;
+        this.weight = weight;
         this.overallCapacity = overallCapacity;
         this.size = size;
     }
@@ -23,6 +26,14 @@ public class Refrigerator extends HouseholdAppliance {
 
     public void setFreezerCapacity(int freezerCapacity) {
         this.freezerCapacity = freezerCapacity;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public double getOverallCapacity() {
@@ -58,16 +69,18 @@ public class Refrigerator extends HouseholdAppliance {
         Refrigerator other = (Refrigerator) o;
 
         if (getFreezerCapacity() != other.getFreezerCapacity()) return false;
+        if (getWeight() != other.getWeight()) return false;
         if (Double.compare(other.getOverallCapacity(), getOverallCapacity()) != 0) return false;
         return getSize().equals(other.getSize());
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
+        final int prime = 113;
         int result = super.hashCode();
         long temp;
         result = prime * result + getFreezerCapacity();
+        result = prime * result + getWeight();
         temp = Double.doubleToLongBits(getOverallCapacity());
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + getSize().hashCode();
@@ -76,11 +89,13 @@ public class Refrigerator extends HouseholdAppliance {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Refrigerator {\n");
-        sb.append("power_consumption: ").append(super.getPowerСonsumption());
-        sb.append("freezer_capacity: ").append(this.freezerCapacity);
-        sb.append("overall_capacity: ").append(this.overallCapacity);
-        sb.append("size: ").append(this.size);
-        return sb.toString();
+        String delimeter = "\n\t";
+        final StringBuilder sb = new StringBuilder("Refrigerator {");
+        sb.append(delimeter).append("power_consumption: ").append(super.getPowerСonsumption());
+        sb.append(delimeter).append("weight: ").append(this.getWeight());
+        sb.append(delimeter).append("freezer_capacity: ").append(this.getFreezerCapacity());
+        sb.append(delimeter).append("overall_capacity: ").append(this.getOverallCapacity());
+        sb.append(delimeter).append("size: ").append(this.getSize());
+        return sb.append('}').toString();
     }
 }
