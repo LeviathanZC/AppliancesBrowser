@@ -17,4 +17,31 @@ public class Refrigerator extends HouseholdAppliance {
         this.size = size;
     }
 
+    public int getFreezerCapacity() {
+        return freezerCapacity;
+    }
+
+    public void setFreezerCapacity(int freezerCapacity) {
+        this.freezerCapacity = freezerCapacity;
+    }
+
+    public double getOverallCapacity() {
+        return overallCapacity;
+    }
+
+    public void setOverallCapacity(double overallCapacity) {
+        this.overallCapacity = overallCapacity;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    public void setSize(double width, double height) {
+        this.size = new Size(width, height);
+    }
 }
