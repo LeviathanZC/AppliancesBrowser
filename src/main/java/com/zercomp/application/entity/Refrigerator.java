@@ -44,4 +44,33 @@ public class Refrigerator extends HouseholdAppliance {
     public void setSize(double width, double height) {
         this.size = new Size(width, height);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) return false;
+
+        Refrigerator other = (Refrigerator) o;
+
+        if (getFreezerCapacity() != other.getFreezerCapacity()) return false;
+        if (Double.compare(other.getOverallCapacity(), getOverallCapacity()) != 0) return false;
+        return getSize().equals(other.getSize());
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        long temp;
+        result = prime * result + getFreezerCapacity();
+        temp = Double.doubleToLongBits(getOverallCapacity());
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + getSize().hashCode();
+        return result;
+    }
 }
