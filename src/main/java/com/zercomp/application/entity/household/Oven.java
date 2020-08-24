@@ -1,7 +1,6 @@
 package com.zercomp.application.entity.household;
 
 import com.zercomp.application.entity.HouseholdAppliance;
-import com.zercomp.application.entity.Size;
 
 public class Oven extends HouseholdAppliance {
 
@@ -91,7 +90,7 @@ public class Oven extends HouseholdAppliance {
     @Override
     public String toString() {
         String delimeter = "\n\t";
-        final StringBuilder sb = new StringBuilder("Oven {");
+        final StringBuilder sb = new StringBuilder(super.getName()).append('{');
         sb.append(delimeter).append("power_consumption: ").append(super.getPowerСonsumption());
         sb.append(delimeter).append("weight: ").append(this.getWeight());
         sb.append(delimeter).append("capacity: ").append(this.getCapacity());

@@ -1,4 +1,4 @@
-package com.zercomp.application.entity;
+package com.zercomp.application.entity.household;
 
 public class Size {
 

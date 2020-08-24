@@ -1,7 +1,6 @@
 package com.zercomp.application.entity.household;
 
 import com.zercomp.application.entity.HouseholdAppliance;
-import com.zercomp.application.entity.Size;
 
 public class VacuumCleaner extends HouseholdAppliance {
 
@@ -101,7 +100,7 @@ public class VacuumCleaner extends HouseholdAppliance {
     @Override
     public String toString() {
         String delimeter = "\n\t";
-        final StringBuilder sb = new StringBuilder("VacuumCleaner {");
+        final StringBuilder sb = new StringBuilder(super.getName()).append('{');
         sb.append(delimeter).append("power_consumption: ").append(super.getPowerСonsumption());
         sb.append(delimeter).append("filter_type: ").append(this.getFilterType());
         sb.append(delimeter).append("bag_type: ").append(this.getBagType());
