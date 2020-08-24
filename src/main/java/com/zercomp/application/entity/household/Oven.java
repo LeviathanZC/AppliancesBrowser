@@ -95,7 +95,7 @@ public class Oven extends HouseholdAppliance {
         sb.append(delimeter).append("capacity: ").append(this.getCapacity());
         sb.append(delimeter).append("depth: ").append(this.getDepth());
         sb.append(delimeter).append("size: ").append(this.getSize());
-        return sb.append('}').toString();
+        return sb.append("\n}").toString();
     }
 
 }

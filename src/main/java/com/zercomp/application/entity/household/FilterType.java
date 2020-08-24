@@ -10,4 +10,12 @@ public enum FilterType {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return new StringBuilder("[FilterType = ").append(this.type).append(']').toString();
+    }
+
+    public String getType() {
+        return type;
+    }
 }

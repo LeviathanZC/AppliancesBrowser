@@ -99,6 +99,6 @@ public class Refrigerator extends HouseholdAppliance {
         sb.append(delimeter).append("freezer_capacity: ").append(this.getFreezerCapacity());
         sb.append(delimeter).append("overall_capacity: ").append(this.getOverallCapacity());
         sb.append(delimeter).append("size: ").append(this.getSize());
-        return sb.append('}').toString();
+        return sb.append("\n}").toString();
     }
 }

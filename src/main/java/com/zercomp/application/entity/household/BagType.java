@@ -12,11 +12,12 @@ public enum BagType {
         this.type = type;
     }
 
-    public String getType() {
-        return type;
+    @Override
+    public String toString() {
+        return new StringBuilder("[BagType = ").append(this.type).append(']').toString();
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public String getType() {
+        return type;
     }
 }

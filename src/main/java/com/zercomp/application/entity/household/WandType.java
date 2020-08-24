@@ -10,11 +10,12 @@ public enum WandType {
         this.type = type;
     }
 
-    public String getType() {
-        return type;
+    @Override
+    public String toString() {
+        return new StringBuilder("[WandType = ").append(this.type).append(']').toString();
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public String getType() {
+        return type;
     }
 }
