@@ -1,6 +1,9 @@
 package com.zercomp.application.entity.household;
 
 import com.zercomp.application.entity.HouseholdAppliance;
+import com.zercomp.application.entity.household.config.BagType;
+import com.zercomp.application.entity.household.config.FilterType;
+import com.zercomp.application.entity.household.config.WandType;
 
 public class VacuumCleaner extends HouseholdAppliance {
 

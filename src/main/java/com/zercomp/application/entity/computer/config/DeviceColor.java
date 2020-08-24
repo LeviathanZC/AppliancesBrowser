@@ -1,4 +1,4 @@
-package com.zercomp.application.entity.computer;
+package com.zercomp.application.entity.computer.config;
 
 public enum DeviceColor {
 

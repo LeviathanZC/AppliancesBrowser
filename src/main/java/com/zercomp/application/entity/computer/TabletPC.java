@@ -1,6 +1,7 @@
 package com.zercomp.application.entity.computer;
 
 import com.zercomp.application.entity.ComputerAppliance;
+import com.zercomp.application.entity.computer.config.DeviceColor;
 
 public class TabletPC extends ComputerAppliance {
 

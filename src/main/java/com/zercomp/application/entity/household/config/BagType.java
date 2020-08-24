@@ -1,4 +1,4 @@
-package com.zercomp.application.entity.household;
+package com.zercomp.application.entity.household.config;
 
 public enum BagType {
 

@@ -1,6 +1,7 @@
 package com.zercomp.application.entity.computer;
 
 import com.zercomp.application.entity.ComputerAppliance;
+import com.zercomp.application.entity.computer.config.OSType;
 
 public class Laptop extends ComputerAppliance {
 
