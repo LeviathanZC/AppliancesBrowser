@@ -1,14 +1,12 @@
 package com.zercomp.application.entity.household;
 
-public enum BagType {
+public enum WandType {
 
-    A2("A2"),
-    AA89("AA-89"),
-    XX00("XX00");
+    ALL_IN_ONE("all-in-one");
 
     private String type;
 
-    BagType(String type) {
+    WandType(String type) {
         this.type = type;
     }
 
