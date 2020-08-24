@@ -67,7 +67,9 @@ public class Refrigerator extends HouseholdAppliance {
         if (o == null || this.getClass() != o.getClass()) {
             return false;
         }
-        if (!super.equals(o)) return false;
+        if (!super.equals(o)) {
+            return false;
+        }
 
         Refrigerator other = (Refrigerator) o;
 

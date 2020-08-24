@@ -18,7 +18,7 @@ public abstract class ComputerAppliance extends AbstractAppliance {
         super(name);
         this.batteryCapacity = batteryCapacity;
         this.memoryROM = memoryROM;
-        this.display_inches = this.display_inches;
+        this.display_inches = display_inches;
     }
 
     @Override

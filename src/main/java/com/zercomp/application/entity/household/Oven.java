@@ -63,7 +63,9 @@ public class Oven extends HouseholdAppliance {
         if (o == null || this.getClass() != o.getClass()) {
             return false;
         }
-        if (!super.equals(o)) return false;
+        if (!super.equals(o))  {
+            return false;
+        }
 
         Oven other = (Oven) o;
 
