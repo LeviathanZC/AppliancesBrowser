@@ -52,7 +52,36 @@ public class Oven extends HouseholdAppliance {
         this.size = size;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) return false;
 
+        Oven other = (Oven) o;
+
+        if (getWeight() != other.getWeight()) return false;
+        if (getCapacity() != other.getCapacity()) return false;
+        if (Double.compare(other.getDepth(), getDepth()) != 0) return false;
+        return getSize().equals(other.getSize());
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 113;
+        int result = super.hashCode();
+        long temp;
+        result = prime * result + getWeight();
+        result = prime * result + getCapacity();
+        temp = Double.doubleToLongBits(getDepth());
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + getSize().hashCode();
+        return result;
+    }
 
     @Override
     public String toString() {
