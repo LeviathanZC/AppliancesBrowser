@@ -73,4 +73,14 @@ public class Refrigerator extends HouseholdAppliance {
         result = prime * result + getSize().hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Refrigerator {\n");
+        sb.append("power_consumption: ").append(super.getPowerСonsumption());
+        sb.append("freezer_capacity: ").append(this.freezerCapacity);
+        sb.append("overall_capacity: ").append(this.overallCapacity);
+        sb.append("size: ").append(this.size);
+        return sb.toString();
+    }
 }

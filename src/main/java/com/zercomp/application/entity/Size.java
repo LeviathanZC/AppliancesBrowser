@@ -60,7 +60,7 @@ public class Size {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Size [");
-        sb.append("width: ").append(width).append(", ").append("height: ").append(height).append(" ]");
+        sb.append("width: ").append(width).append(", ").append("height: ").append(height).append(" ]\n");
         return sb.toString();
     }
 }
