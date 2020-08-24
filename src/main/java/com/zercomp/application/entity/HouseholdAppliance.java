@@ -2,27 +2,27 @@ package com.zercomp.application.entity;
 
 public abstract class HouseholdAppliance extends AbstractAppliance {
 
-    private int power_consumption;
+    private int powerСonsumption;
 
     public HouseholdAppliance() {
         this(0);
     }
 
-    public HouseholdAppliance(int power_consumption) {
-        this(HouseholdAppliance.class.getSimpleName(), power_consumption);
+    public HouseholdAppliance(int powerСonsumption) {
+        this(HouseholdAppliance.class.getSimpleName(), powerСonsumption);
     }
 
-    public HouseholdAppliance(String name, int power_consumption) {
+    public HouseholdAppliance(String name, int powerСonsumption) {
         super(name);
-        this.power_consumption = power_consumption;
+        this.powerСonsumption = powerСonsumption;
     }
 
-    public int getPower_consumption() {
-        return power_consumption;
+    public int getPowerСonsumption() {
+        return powerСonsumption;
     }
 
-    public void setPower_consumption(int power_consumption) {
-        this.power_consumption = power_consumption;
+    public void setPowerСonsumption(int powerСonsumption) {
+        this.powerСonsumption = powerСonsumption;
     }
 
     @Override
@@ -36,14 +36,14 @@ public abstract class HouseholdAppliance extends AbstractAppliance {
 
         HouseholdAppliance other = (HouseholdAppliance) o;
 
-        return getPower_consumption() == other.getPower_consumption();
+        return getPowerСonsumption() == other.getPowerСonsumption();
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = super.hashCode();
-        result = prime * result + getPower_consumption();
+        result = prime * result + getPowerСonsumption();
         return result;
     }
 
@@ -51,7 +51,7 @@ public abstract class HouseholdAppliance extends AbstractAppliance {
     public String toString() {
         final StringBuilder sb = new StringBuilder("HouseholdAppliance {");
         sb.append("name: ").append(this.getName());
-        sb.append("power_consumption: ").append(this.power_consumption);
+        sb.append("power_consumption: ").append(this.powerСonsumption);
         sb.append("\n}");
         return sb.toString();
     }
