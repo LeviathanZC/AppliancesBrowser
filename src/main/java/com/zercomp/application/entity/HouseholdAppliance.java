@@ -49,9 +49,10 @@ public abstract class HouseholdAppliance extends AbstractAppliance {
 
     @Override
     public String toString() {
+        String delimeter = "\n\t";
         final StringBuilder sb = new StringBuilder("HouseholdAppliance {");
-        sb.append("name: ").append(this.getName());
-        sb.append("power_consumption: ").append(this.powerСonsumption);
+        sb.append(delimeter).append("name: ").append(this.getName());
+        sb.append(delimeter).append("power_consumption: ").append(this.powerСonsumption);
         sb.append("\n}");
         return sb.toString();
     }
