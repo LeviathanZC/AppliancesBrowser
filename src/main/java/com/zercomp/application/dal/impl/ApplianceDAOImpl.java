@@ -34,7 +34,11 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         } catch (IOException | MissingResourceException ex) {
             throw new DaoException(ex);
         } finally {
-            reader.close();
+            try {
+                reader.close();
+            } catch (IOException e) {
+                throw new DaoException(e);
+            }
         }
         return null;
     }
