@@ -11,6 +11,4 @@ public interface ApplianceDAO {
 
     List<AbstractAppliance> find(Criteria criteria) throws DaoException;
 
-    //String se
-
 }
