@@ -8,8 +8,8 @@ public interface ApplianceDAO {
 
     List<String> selectAll() throws DaoException;
 
-    String findAppliance(Criteria criteria) throws DaoException;
+    //List<> findAppliance(Criteria criteria) throws DaoException;
 
-    String se
+    //String se
 
 }

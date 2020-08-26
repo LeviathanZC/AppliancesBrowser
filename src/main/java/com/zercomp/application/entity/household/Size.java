@@ -1,6 +1,6 @@
 package com.zercomp.application.entity.household;
 
-public class Size {
+public class Size extends Object {
 
     private double width;
     private double height;
@@ -60,7 +60,7 @@ public class Size {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Size [");
-        sb.append("width: ").append(width).append(", ").append("height: ").append(height).append(" ]\n");
+        sb.append("width: ").append(width).append(", ").append("height: ").append(height).append(']');
         return sb.toString();
     }
 }
