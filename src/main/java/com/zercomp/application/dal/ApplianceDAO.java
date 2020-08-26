@@ -9,7 +9,7 @@ public interface ApplianceDAO {
 
     List<AbstractAppliance> selectAll() throws DaoException;
 
-    List<AbstractAppliance> findAppliance(Criteria criteria) throws DaoException;
+    List<AbstractAppliance> find(Criteria criteria) throws DaoException;
 
     //String se
 

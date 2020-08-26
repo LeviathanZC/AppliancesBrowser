@@ -1,5 +1,9 @@
 package com.zercomp.application.entity.criteria;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public enum Criteria {
 
     POWER_CONSUMPTION("POWER_CONSUMPTION"),
@@ -29,6 +33,7 @@ public enum Criteria {
 
 
     private final String criteriaName;
+    private Map<String, Object> criteria = new HashMap<String, Object>();
 
     private Criteria(String name) {
         this.criteriaName = name;
@@ -36,6 +41,14 @@ public enum Criteria {
 
     public String getCriteriaName() {
         return this.criteriaName;
+    }
+
+    public void add(String searchCriteria, Object value) {
+        criteria.put(searchCriteria, value);
+    }
+
+    public Map<String, Object> getCriteria() {
+        return Collections.unmodifiableMap(criteria);
     }
 
 }
