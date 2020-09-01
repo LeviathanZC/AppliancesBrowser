@@ -16,6 +16,10 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     private static final String PROPERTIES = "file";
     private static final String PATH = "file.path";
+    private static final char NAME_DELIMETER = ':';
+    private static final char VALUE_DELIMETER = '=';
+    private static final String PARAMETER_DELIMETER = ", ";
+
 
     private static BufferedReader reader;
 
@@ -23,7 +27,9 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
         String filePath = bundle.getString(PATH);
         List<String> allAppliances = selectAll(filePath);
+        for (String appliance : allAppliances) {
 
+        }
 
         return null;
     }
