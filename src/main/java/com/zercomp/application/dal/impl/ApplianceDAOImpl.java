@@ -19,6 +19,31 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     private static BufferedReader reader;
 
+    public List<AbstractAppliance> find(Criteria criteria) throws DaoException {
+        ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
+        String filePath = bundle.getString(PATH);
+        List<String> allAppliances = selectAll(filePath);
+
+
+        return null;
+    }
+
+    private List<String> selectAll(String filePath) throws DaoException {
+        ArrayList<String> stringAppliances = new ArrayList<String>();
+        String line;
+        try {
+            BufferedReader tempReader = initReader(filePath);
+            while ((line = tempReader.readLine()) != null) {
+                stringAppliances.add(line);
+            }
+        } catch (IOException e) {
+            throw new DaoException("error while reading file", e);
+        } finally {
+            closeReader();
+        }
+        return stringAppliances;
+    }
+
     private static BufferedReader initReader(String filePath) throws DaoException {
         try {
             if (reader == null) {
@@ -38,29 +63,5 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         } catch (IOException e) {
             throw new DaoException("error while closing \"reader\"", e);
         }
-    }
-
-    public List<AbstractAppliance> find(Criteria criteria) throws DaoException {
-        ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
-        String filePath = bundle.getString(PATH);
-        String path;
-
-        return null;
-    }
-
-    private List<String> selectAll(String filePath) throws DaoException {
-        ArrayList<String> stringAppliances = new ArrayList<String>();
-        String line;
-        try {
-            BufferedReader tempReader = initReader(filePath);
-            while ((line = tempReader.readLine()) != null) {
-                stringAppliances.add(line);
-            }
-        } catch (IOException e) {
-            throw new DaoException("error while reading file", e);
-        } finally {
-            closeReader();
-        }
-        return stringAppliances;
     }
 }
