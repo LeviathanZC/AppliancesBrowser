@@ -25,12 +25,7 @@ public class ComputerFactory implements AbstractFactory {
     @Override
     public AbstractAppliance create(Map<String, Object> applianceInfo) {
         ApplianceName that = ApplianceName.valueOf((String) applianceInfo.get("name"));
-        String name = that.getName();
-        switch (name) {
-            case "Laptop": {
-                return createLaptop(applianceInfo);
-            }
-        }
+
         return null;
     }
 
