@@ -8,14 +8,14 @@ import com.zercomp.application.entity.criteria.Criteria;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
 
-    private static final String FILE_PATH = "file.path";
     private static final String PROPERTIES = "file";
+    private static final String PATH = "file.path";
 
     private static BufferedReader reader;
 
@@ -32,7 +32,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     private static void closeReader() throws DaoException {
         try {
-            if(reader != null) {
+            if (reader != null) {
                 reader.close();
             }
         } catch (IOException e) {
@@ -42,27 +42,25 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     public List<AbstractAppliance> find(Criteria criteria) throws DaoException {
         ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
-        String fileName = bundle.getString(FILE_PATH);
-        String criteriaName = criteria.getCriteriaName();
+        String filePath = bundle.getString(PATH);
         String path;
-        BufferedReader reader = null;
-        try {
-            ResourceBundle resource = ResourceBundle.getBundle(FILE);
-            path = resource.getString(KEY);
-            reader = new BufferedReader(new FileReader(path));
-        } catch (IOException | MissingResourceException ex) {
-            throw new DaoException(ex);
-        } finally {
-            try {
-                reader.close();
-            } catch (IOException e) {
-                throw new DaoException(e);
-            }
-        }
+
         return null;
     }
 
     private List<String> selectAll(String filePath) throws DaoException {
-
+        ArrayList<String> stringAppliances = new ArrayList<String>();
+        String line;
+        try {
+            BufferedReader tempReader = initReader(filePath);
+            while ((line = tempReader.readLine()) != null) {
+                stringAppliances.add(line);
+            }
+        } catch (IOException e) {
+            throw new DaoException("error while reading file", e);
+        } finally {
+            closeReader();
+        }
+        return stringAppliances;
     }
 }
