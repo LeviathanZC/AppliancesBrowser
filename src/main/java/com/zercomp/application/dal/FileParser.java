@@ -1,6 +1,5 @@
 package com.zercomp.application.dal;
 
-import com.zercomp.application.exception.InvalidDataException;
 
 import java.io.*;
 import java.util.List;
@@ -11,15 +10,16 @@ public class FileParser {
 
     private FileReader fReader;
 
-    public FileParser() throws InvalidDataException {
+    public FileParser() {
         this(DEFAULT_PATH);
     }
 
-    public FileParser(String path) throws InvalidDataException {
+    public FileParser(String path) {
 
     }
 
     public List<String> readFile() {
         return null;
     }
+
 }

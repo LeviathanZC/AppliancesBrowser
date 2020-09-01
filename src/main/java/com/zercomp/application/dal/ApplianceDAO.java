@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface ApplianceDAO {
 
-    List<AbstractAppliance> selectAll() throws DaoException;
-
     List<AbstractAppliance> find(Criteria criteria) throws DaoException;
 
 }

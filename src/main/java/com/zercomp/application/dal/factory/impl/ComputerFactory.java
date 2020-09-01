@@ -1,9 +1,12 @@
 package com.zercomp.application.dal.factory.impl;
 
 import com.zercomp.application.dal.factory.AbstractFactory;
+import com.zercomp.application.dal.factory.validator.InfoValidator;
 import com.zercomp.application.entity.AbstractAppliance;
+import com.zercomp.application.entity.ComputerAppliance;
+import com.zercomp.application.entity.criteria.ApplianceName;
 
-import java.util.List;
+import java.util.Map;
 
 public class ComputerFactory implements AbstractFactory {
 
@@ -16,9 +19,23 @@ public class ComputerFactory implements AbstractFactory {
         return instance;
     }
 
-    @Override
-    public AbstractAppliance create(List<String> appliance) {
+    private static final String laptopName = ApplianceName.LAPTOP.getName();
+    private static final String tabletPCName = ApplianceName.TABLET_PC.getName();
 
+    @Override
+    public AbstractAppliance create(Map<String, Object> applianceInfo) {
+        ApplianceName that = ApplianceName.valueOf((String) applianceInfo.get("name"));
+        String name = that.getName();
+        switch (name) {
+            case "Laptop": {
+                return createLaptop(applianceInfo);
+            }
+        }
+        return null;
+    }
+
+    private ComputerAppliance createLaptop(Map<String, Object> laptopInfo) {
+        System.out.println(laptopInfo);
         return null;
     }
 }

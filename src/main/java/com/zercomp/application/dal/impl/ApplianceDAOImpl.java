@@ -18,11 +18,6 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     private static final String FILE = "file";
     private static final String KEY = "file.path";
 
-
-    public List<AbstractAppliance> selectAll() throws DaoException {
-        return null;
-    }
-
     public List<AbstractAppliance> find(Criteria criteria) throws DaoException {
         String criteriaName = criteria.getCriteriaName();
         String path;
