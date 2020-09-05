@@ -1,16 +1,10 @@
 package com.zercomp.application.controller;
 
-import com.zercomp.application.controller.command.parameter.Request;
 import com.zercomp.application.dal.DaoException;
-import com.zercomp.application.dal.factory.AbstractFactory;
-import com.zercomp.application.dal.factory.impl.ComputerFactory;
 import com.zercomp.application.dal.impl.ApplianceDAOImpl;
 import com.zercomp.application.dal.parser.ApplianceParser;
-import com.zercomp.application.entity.criteria.Criteria;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class MainController {
 

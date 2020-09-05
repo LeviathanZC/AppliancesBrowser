@@ -28,6 +28,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
         String filePath = bundle.getString(PATH);
         List<String> allAppliances = selectAll(filePath);
+
         ApplianceParser parser = ApplianceParser.getInstance();
         for (String appliance : allAppliances) {
 
