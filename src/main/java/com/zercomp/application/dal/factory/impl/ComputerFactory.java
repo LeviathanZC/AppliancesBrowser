@@ -1,10 +1,9 @@
 package com.zercomp.application.dal.factory.impl;
 
 import com.zercomp.application.dal.factory.AbstractFactory;
-import com.zercomp.application.dal.factory.validator.InfoValidator;
 import com.zercomp.application.entity.AbstractAppliance;
 import com.zercomp.application.entity.ComputerAppliance;
-import com.zercomp.application.entity.criteria.ApplianceName;
+import com.zercomp.application.entity.criteria.paramType.ApplianceName;
 
 import java.util.Map;
 

@@ -1,6 +1,8 @@
-package com.zercomp.application.entity.criteria;
+package com.zercomp.application.entity.criteria.paramType;
 
-public enum ApplianceName {
+import com.zercomp.application.entity.criteria.Parameter;
+
+public enum ApplianceName implements Parameter {
 
     OVEN("Oven"),
     LAPTOP("Laptop"),

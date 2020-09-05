@@ -1,6 +1,6 @@
 package com.zercomp.application.dal.factory.validator;
 
-import com.zercomp.application.entity.criteria.ApplianceName;
+import com.zercomp.application.entity.criteria.paramType.ApplianceName;
 
 public class InfoValidator {
 

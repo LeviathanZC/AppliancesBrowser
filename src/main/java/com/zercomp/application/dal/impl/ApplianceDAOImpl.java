@@ -2,6 +2,7 @@ package com.zercomp.application.dal.impl;
 
 import com.zercomp.application.dal.ApplianceDAO;
 import com.zercomp.application.dal.DaoException;
+import com.zercomp.application.dal.parser.ApplianceParser;
 import com.zercomp.application.entity.AbstractAppliance;
 import com.zercomp.application.entity.criteria.Criteria;
 
@@ -27,6 +28,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
         String filePath = bundle.getString(PATH);
         List<String> allAppliances = selectAll(filePath);
+        ApplianceParser parser = ApplianceParser.getInstance();
         for (String appliance : allAppliances) {
 
         }
@@ -34,7 +36,9 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         return null;
     }
 
-    private List<String> selectAll(String filePath) throws DaoException {
+
+
+    public List<String> selectAll(String filePath) throws DaoException {
         ArrayList<String> stringAppliances = new ArrayList<String>();
         String line;
         try {
