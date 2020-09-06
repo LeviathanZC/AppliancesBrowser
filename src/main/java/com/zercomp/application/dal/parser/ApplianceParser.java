@@ -26,10 +26,9 @@ public class ApplianceParser {
 
     private Matcher commonMatcher;
 
-    public List<String> selectSpecifiedAppliance(List<String> allAppliances, Criteria criteria) {
+    public List<String> selectSpecifiedGroup(List<String> allAppliances, String searchGroup) {
         List<String> foundAppliance = new ArrayList<>();
-        String groupSearch = criteria.getGroupName();
-        NAME_PATTERN = Pattern.compile(groupSearch);
+        NAME_PATTERN = Pattern.compile(searchGroup);
         for (String appliance : allAppliances) {
             if (NAME_PATTERN.matcher(appliance).find()) {
                 foundAppliance.add(appliance);

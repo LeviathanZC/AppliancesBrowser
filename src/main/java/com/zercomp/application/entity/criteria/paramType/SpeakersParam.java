@@ -2,19 +2,17 @@ package com.zercomp.application.entity.criteria.paramType;
 
 import com.zercomp.application.entity.criteria.Parameter;
 
-public enum OvenParam implements Parameter {
+public enum SpeakersParam implements Parameter {
 
     POWER_CONSUMPTION("POWER_CONSUMPTION"),
-    WEIGHT("WEIGHT"),
-    CAPACITY("CAPACITY"),
-    DEPTH("DEPTH"),
-    HEIGHT("HEIGHT"),
-    WIDTH("WIDTH");
+    NUMBER_OF_SPEAKERS("NUMBER_OF_SPEAKERS"),
+    FREQUENCY_RANGE("FREQUENCY_RANGE"),
+    CORD_LENGTH("CORD_LENGTH");
 
 
     private String name;
 
-    OvenParam(String param) {
+    SpeakersParam(String param) {
         this.name = param;
     }
 

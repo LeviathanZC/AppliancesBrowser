@@ -2,19 +2,17 @@ package com.zercomp.application.entity.criteria.paramType;
 
 import com.zercomp.application.entity.criteria.Parameter;
 
-public enum LaptopParam implements Parameter {
-
+public enum TabletPCParam implements Parameter {
     BATTERY_CAPACITY("BATTERY_CAPACITY"),
-    OS_TYPE("OS"),
+    DISPLAY_INCHES("DISPLAY_INCHES"),
     MEMORY_ROM("MEMORY_ROM"),
-    SYSTEM_MEMORY("SYSTEM_MEMORY"),
-    CPU("CPU"),
-    DISPLAY_INCHES("DISPLAY_INCHES");
+    FLASH_MEMORY_CAPACITY("FLASH_MEMORY_CAPACITY"),
+    COLOR("COLOR");
 
 
     private String name;
 
-    LaptopParam(String param) {
+    TabletPCParam(String param) {
         this.name = param;
     }
 

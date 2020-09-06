@@ -3,8 +3,6 @@ package com.zercomp.application.dal.impl;
 import com.zercomp.application.dal.ApplianceDAO;
 import com.zercomp.application.dal.DaoException;
 import com.zercomp.application.dal.parser.ApplianceParser;
-import com.zercomp.application.entity.AbstractAppliance;
-import com.zercomp.application.entity.criteria.Criteria;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,27 +15,25 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     private static final String PROPERTIES = "file";
     private static final String PATH = "file.path";
-    private static final char NAME_DELIMETER = ':';
     private static final char VALUE_DELIMETER = '=';
     private static final String PARAMETER_DELIMETER = ", ";
 
 
     private static BufferedReader reader;
+    
+    private ApplianceParser parser;
 
-    public List<AbstractAppliance> find(Criteria criteria) throws DaoException {
-        ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
-        String filePath = bundle.getString(PATH);
-        List<String> allAppliances = selectAll(filePath);
-
-        ApplianceParser parser = ApplianceParser.getInstance();
-        for (String appliance : allAppliances) {
-
-        }
-
-        return null;
+    public List<String> find(String groupName) throws DaoException {
+        List<String> allAppliances = readFile();
+        parser = ApplianceParser.getInstance();
+        return parser.selectSpecifiedGroup(allAppliances, groupName);
     }
 
-
+    private List<String> readFile() throws DaoException {
+        ResourceBundle bundle = ResourceBundle.getBundle(PROPERTIES);
+        String filePath = bundle.getString(PATH);
+        return selectAll(filePath);
+    }
 
     public List<String> selectAll(String filePath) throws DaoException {
         ArrayList<String> stringAppliances = new ArrayList<String>();

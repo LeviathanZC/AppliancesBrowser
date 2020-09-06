@@ -2,9 +2,9 @@ package com.zercomp.application.entity.computer.config;
 
 public enum DeviceColor {
 
-    RED("Red"),
-    GREEN("Green"),
-    BLUE("Blue");
+    RED("red"),
+    GREEN("green"),
+    BLUE("blue");
 
     private String color;
 

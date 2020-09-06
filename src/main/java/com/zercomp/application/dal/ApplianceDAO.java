@@ -1,12 +1,11 @@
 package com.zercomp.application.dal;
 
 import com.zercomp.application.entity.AbstractAppliance;
-import com.zercomp.application.entity.criteria.Criteria;
 
 import java.util.List;
 
 public interface ApplianceDAO {
 
-    List<AbstractAppliance> find(Criteria criteria) throws DaoException;
+    List<String> find(String applianceName) throws DaoException;
 
 }

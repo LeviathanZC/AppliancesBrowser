@@ -4,8 +4,8 @@ import com.zercomp.application.entity.HouseholdAppliance;
 
 public class Refrigerator extends HouseholdAppliance {
 
-    private int freezerCapacity;
     private int weight;
+    private int freezerCapacity;
     private double overallCapacity;
     private Size size;
 
