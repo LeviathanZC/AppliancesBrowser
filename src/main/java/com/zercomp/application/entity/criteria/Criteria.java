@@ -7,7 +7,7 @@ import java.util.Map;
 public class Criteria {
 
     private final String groupName;
-    private Map<String, Object> criteria = new HashMap<String, Object>();
+    private Map<String, String> criteria = new HashMap<String, String>();
 
     public Criteria(String name) {
         this.groupName = name;
@@ -17,11 +17,11 @@ public class Criteria {
         return this.groupName;
     }
 
-    public void add(String searchCriteria, Object value) {
+    public void add(String searchCriteria, String value) {
         criteria.put(searchCriteria, value);
     }
 
-    public Map<String, Object> getCriteria() {
+    public Map<String, String> getCriteria() {
         return Collections.unmodifiableMap(criteria);
     }
 

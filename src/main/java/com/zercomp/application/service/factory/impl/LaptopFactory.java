@@ -26,7 +26,7 @@ public class LaptopFactory extends ComputerFactory {
     @Override
     public ComputerAppliance createComputerAppliance(Map<String, String> applianceInfo) {
         double batteryCapacity = Double.parseDouble(AbstractFactory.getParameter(applianceInfo, LaptopParam.BATTERY_CAPACITY));
-        OSType osType = OSType.valueOf(AbstractFactory.getParameter(applianceInfo, LaptopParam.OS_TYPE));
+        OSType osType = OSType.valueOf(AbstractFactory.getParameter(applianceInfo, LaptopParam.OS_TYPE).toUpperCase());
         int memoryROM = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, LaptopParam.MEMORY_ROM));
         int systemMemory = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, LaptopParam.SYSTEM_MEMORY));
         double cpu = Double.parseDouble(AbstractFactory.getParameter(applianceInfo, LaptopParam.CPU));
