@@ -30,7 +30,7 @@ public class FindService {
 
     public List<AbstractAppliance> findBy(Criteria criteria) throws ServiceException {
         List<AbstractAppliance> foundAppliances = new ArrayList<>();
-        ApplianceDAO dao = new ApplianceDAOImpl();
+        ApplianceDAO dao = ApplianceDAOImpl.getINSTANCE();
         ApplianceParser parser = ApplianceParser.getInstance();
         AbstractFactory factory;
 

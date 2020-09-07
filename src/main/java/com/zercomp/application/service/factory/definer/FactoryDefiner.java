@@ -31,10 +31,10 @@ public class FactoryDefiner {
             case REFRIGERATOR: {
                 return RefrigeratorFactory.getInstance();
             }
-            case VACUUM_CLEANER: {
+            case VACUUMCLEANER: {
                 return VacuumCleanerFactory.getInstance();
             }
-            case TABLET_PC: {
+            case TABLETPC: {
                 return TabletPCFactory.getInstance();
             }
             case SPEAKERS: {

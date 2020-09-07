@@ -6,9 +6,9 @@ public enum ApplianceName implements Parameter {
 
     OVEN("Oven"),
     LAPTOP("Laptop"),
-    TABLET_PC("TabletPC"),
+    TABLETPC("TabletPC"),
     REFRIGERATOR("Refrigerator"),
-    VACUUM_CLEANER("VacuumCleaner"),
+    VACUUMCLEANER("VacuumCleaner"),
     SPEAKERS("Speakers");
 
     private String name;

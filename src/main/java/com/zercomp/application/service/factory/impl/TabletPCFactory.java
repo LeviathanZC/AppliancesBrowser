@@ -29,7 +29,7 @@ public class TabletPCFactory extends ComputerFactory {
         int memoryROM = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, TabletPCParam.MEMORY_ROM));
         int display_inches = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, TabletPCParam.DISPLAY_INCHES));
         int flashMemoryCapacity = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, TabletPCParam.FLASH_MEMORY_CAPACITY));
-        DeviceColor color = DeviceColor.valueOf(AbstractFactory.getParameter(applianceInfo, TabletPCParam.COLOR));
+        DeviceColor color = DeviceColor.valueOf(AbstractFactory.getParameter(applianceInfo, TabletPCParam.COLOR).toUpperCase());
         return new TabletPC(batteryCapacity, memoryROM, display_inches, flashMemoryCapacity, color);
     }
 }

@@ -13,11 +13,20 @@ import java.util.ResourceBundle;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
 
+    private static ApplianceDAO INSTANCE;
+
+    private ApplianceDAOImpl() {
+    }
+
+    public static ApplianceDAO getINSTANCE() {
+        if (INSTANCE == null) {
+            INSTANCE = new ApplianceDAOImpl();
+        }
+        return INSTANCE;
+    }
+
     private static final String PROPERTIES = "file";
     private static final String PATH = "file.path";
-    private static final char VALUE_DELIMETER = '=';
-    private static final String PARAMETER_DELIMETER = ", ";
-
 
     private static BufferedReader reader;
     
@@ -66,6 +75,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         try {
             if (reader != null) {
                 reader.close();
+                reader = null;
             }
         } catch (IOException e) {
             throw new DaoException("error while closing \"reader\"", e);

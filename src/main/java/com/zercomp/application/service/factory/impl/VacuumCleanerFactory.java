@@ -29,10 +29,34 @@ public class VacuumCleanerFactory extends HouseholdFactory {
     public HouseholdAppliance createHouseholdAppliance(Map<String, String> applianceInfo) {
         int powerConsumption = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.POWER_CONSUMPTION));
         FilterType filter = FilterType.valueOf(AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.FILTER_TYPE));
-        BagType bag = BagType.valueOf(AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.BAG_TYPE));
-        WandType wand = WandType.valueOf(AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.WAND_TYPE));
-        int motorSpeedRegulation = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, OvenParam.WEIGHT));
-        int cleaningWidth = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, OvenParam.CAPACITY));
+        BagType bag;
+        switch (AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.BAG_TYPE)) {
+            case "A2": {
+                bag = BagType.A2;
+                break;
+            }
+            case "AA-89" : {
+                bag = BagType.AA89;
+                break;
+            }
+            case "XX00" : {
+                bag = BagType.XX00;
+                break;
+            }
+            default:
+                throw new IllegalStateException("Unexpected value: " + AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.BAG_TYPE));
+        }
+        WandType wand;
+        switch (AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.WAND_TYPE)) {
+            case "all-in-one": {
+                wand = WandType.ALL_IN_ONE;
+                break;
+            }
+            default:
+                throw new IllegalStateException("Unexpected value: " + AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.WAND_TYPE));
+        }
+        int motorSpeedRegulation = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.MOTOR_SPEED_REGULATION));
+        int cleaningWidth = Integer.parseInt(AbstractFactory.getParameter(applianceInfo, VacuumCleanerParam.CLEANING_WIDTH));
         return new VacuumCleaner(powerConsumption, filter, bag, wand, motorSpeedRegulation, cleaningWidth);
     }
 }

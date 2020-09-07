@@ -13,10 +13,10 @@ public class ParamDefiner {
             case LAPTOP: {
                 return LaptopParam.valueOf(paramName);
             }
-            case TABLET_PC: {
+            case TABLETPC: {
                 return TabletPCParam.valueOf(paramName);
             }
-            case VACUUM_CLEANER: {
+            case VACUUMCLEANER: {
                 return VacuumCleanerParam.valueOf(paramName);
             }
             case SPEAKERS: {
